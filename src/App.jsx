@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import VoiceAgentButton from './components/VoiceAgentButton';
 import DashboardGeneral from './pages/DashboardGeneral';
 import GestionRutas from './pages/GestionRutas';
 import GestionRecursos from './pages/GestionRecursos';
@@ -128,6 +129,9 @@ function App() {
           />
           <Route path="/" element={<Navigate to="/login" replace />} />
         </Routes>
+        
+        {/* Botón flotante del asistente de voz - visible en todas las páginas */}
+        <VoiceAgentButton />
       </Router>
     </AuthProvider>
   );
